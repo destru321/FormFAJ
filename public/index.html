@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="/javascripts/main.js" defer type="module"></script>
+</head>
+<body>
+    <main class="main">
+        <header class="header">
+            <div class="header__background">
+                <div class="header__banner">
+                    <div class="logo"></div>
+                </div>
+            </div>
+        </header>
+        <article class="article">
+            <section class="section">
+                <h1>Personal information</h1>
+                <form>
+                    <div>
+                        <input type="text" class="data upper name" data-same="name" placeholder="name">
+                    </div>
+                    <div>
+                        <input type="text" class="data upper" placeholder="surname">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="e-mail" class="data mail" >
+                    </div>
+                    <div>
+                        <input type="email" placeholder="confirm the e-mail" class="data mail">
+                    </div>
+                    <div>
+                        <select name="status" class="data" >
+                            <option value="" selected disabled hidden>Status</option>
+                            <option value="Student">Student</option>
+                            <option value="Phd Student">PhD Student</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select name="typeOfPresentation" class="data" >
+                            <option value="" selected disabled hidden>Type of presentation</option>
+                            <option value="Oral">Oral</option>
+                            <option value="Poster">Poster</option>
+                            <option value="None">None</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select name="participation" class="data" >
+                            <option value="" selected disabled hidden>Participation</option>
+                            <option value="Invited talk">Invited talk</option>
+                            <option value="Talk">Talk</option>
+                            <option value="Poster">Poster</option>
+                            <option value="None">None</option>
+                        </select>
+                    </div>
+                </form>
+            </section>
+            <section>
+                <h1>University/Institution address</h1>
+                <form class="isert">
+                    <div class="check">
+                        <input type="text" placeholder="Street" data-same="street" class="data upper" >
+                    </div>
+                    <div class="check">
+                        <input type="text" placeholder="City" data-same="city" class="data upper" >
+                    </div>
+                    <div class="check">
+                        <input type="text" placeholder="Postcode" data-same="post" class="data post" maxlength="6">
+                    </div>
+                    <label class="check">
+                        <select data-same="country" class="data countries">
+                            <option value="" selected disabled hidden>Select country</option>
+                        </select>
+                    </label>
+                </form>
+            </section>
+            <section>
+                <h1>Invoice</h1>
+                <form>
+                    <div>
+                        <input type="radio" name="invoice" class="data"  value="Personal invoice" checked>Personal invoice
+                    </div>
+                    <div>
+                        <input type="radio" name="invoice" class="data"  value="Invoice for institution">Invoice for institution
+                    </div>
+                    <div>
+                        <input type="radio" name="invoice" class="data fee"  value="I am exempt from paying the conference fee">I am exempt from paying the conference fee
+                    </div>
+                    <div class="pro">
+                        <input type="checkbox" value="I need a pro forma invoice" class="data">I need a pro forma invoice
+                    </div>
+                    <div>
+                        <input type="checkbox" value="I need a letter of support for visa application" class="data">I need a letter of support for visa application
+                    </div>
+                </form>
+            </section>
+            <section class="invoiceAddress">
+                <h1>Address for invoice</h1>
+                <form>
+                    <div>
+                        <input type="checkbox" value="Address for invoice same as an affiliation" class="data sameAddress">Address for invoice same as an affiliation
+                    </div>
+                    <div class="address">
+                        <div class="check">
+                            <input type="text" placeholder="Name for invoice" data-same="name" class="data upper">
+                        </div >
+                        <div class="check">
+                            <input type="text" placeholder="Street" data-same="street" class="data upper">
+                        </div>
+                        <div class="check">
+                            <input type="text" placeholder="City" data-same="city" class="data upper">
+                        </div>
+                        <div class="check">
+                            <input type="text" placeholder="Postcode" data-same="post" class="data post" maxlength="6">
+                        </div>
+                        <div class="check">
+                            <input type="text" placeholder="Country" data-same="country" class="data upper">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="number" class="data vat vat--hidden" placeholder="VAT ID"  value="0">
+                    </div>
+                </form>
+            </section>
+            <section>
+                <h1>Food preferences</h1>
+                <form>
+                    <div>
+                        <input type="radio" value="Normal diet" name="food" class="data" checked>Normal diet
+                    </div>
+                    <div>
+                        <input type="radio" value="Vegetarian diet" name="food" class="data">Vegetarian diet
+                    </div>
+                    <div>
+                        <input type="radio" value="Vegan diet" name="food" class="data">Vegan diet
+                    </div>
+                </form>
+            </section>
+            <section>
+                <h1>Legal info</h1>
+                <form>
+                    <div class="margin">
+                        <input type="checkbox" class="data agreements">I agree to the processing of my personal data for the purpose of related to the QSCP 2022 conference management in accordance with art. 6 par. 1 lit. a Regulation (EU) 2016/679 of the European Parliament and the Council issued on 27 April 2016 on the protection of individuals with regard to the processing of personal data and on the free transfer of such data and repealing Directive 95/46/WE (general data protection regulation). [required field]
+                    </div>
+                    <div class="margin">
+                        <input type="checkbox" class="data agreements">I agree to the Aleksander Jabłoński Foundation's Personal Data Administrator Information Clause [required field]
+                    </div>
+                    <div>
+                        <input type="checkbox" class="data agreements">I agree to terms & conditions [required field]
+                    </div>
+                </form>
+            </section>
+            <button class="article__button button">Send</button>
+        </article>
+    </main>
+</body>
+</html>
