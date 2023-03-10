@@ -75,10 +75,6 @@ function checkIfAllFilled() {
             restInputed = false;
         }
     })
-    console.log(restInputed)
-    console.log(allAgreed)
-    console.log(validPostal)
-    console.log(validEmail)
 
     if (allAgreed && validPostal && validEmail && restInputed) {
         console.log(restInputed)
@@ -276,40 +272,43 @@ function hideAddress() {
 }
 
 function hideFee() {
-    document.querySelector('.fee').addEventListener('click', (e) => {
-        if(e.target.checked) {
-            document.querySelector('.invoiceAddress').classList.add('address--hidden')
-            document.querySelector('.address').childNodes.forEach(childd => {
-                if (childd.classList) {
-                    childd.childNodes.forEach(elemm => {
-                        if (elemm.classList) {
-                            elemm.value = "none";
-                        }
-                    })
-                }
-            })
+    document.getElementsByName('invoice').forEach(invoice => {
 
-            document.querySelector('.vat').classList.add('vat--hidden');
-            document.querySelector('.vat').value = "0";
+        invoice.addEventListener('click', (e) => {
+            if(e.target.checked && e.target.classList.contains('fee')) {
+                document.querySelector('.invoiceAddress').classList.add('address--hidden')
+                document.querySelector('.address').childNodes.forEach(childd => {
+                    if (childd.classList) {
+                        childd.childNodes.forEach(elemm => {
+                            if (elemm.classList) {
+                                elemm.value = "none";
+                            }
+                        })
+                    }
+                })
 
-            document.querySelector('.pro').classList.add('vat--hidden')
-        } else {
-            document.querySelector('.invoiceAddress').classList.add('address--hidden')
-            document.querySelector('.address').childNodes.forEach(childd => {
-                if (childd.classList) {
-                    childd.childNodes.forEach(elemm => {
-                        if (elemm.classList) {
-                            elemm.value = "";
-                        }
-                    })
-                }
-            })
+                document.querySelector('.vat').classList.add('vat--hidden');
+                document.querySelector('.vat').value = "0";
 
-            document.querySelector('.vat').classList.remove('vat--hidden');
-            document.querySelector('.vat').value = "";
+                document.querySelector('.pro').classList.add('vat--hidden')
+            } else {
+                document.querySelector('.invoiceAddress').classList.remove('address--hidden')
+                document.querySelector('.address').childNodes.forEach(childd => {
+                    if (childd.classList) {
+                        childd.childNodes.forEach(elemm => {
+                            if (elemm.classList) {
+                                elemm.value = "";
+                            }
+                        })
+                    }
+                })
 
-            document.querySelector('.pro').classList.remove('vat--hidden')
-        }
+                document.querySelector('.vat').classList.remove('vat--hidden');
+                document.querySelector('.vat').value = "";
+
+                document.querySelector('.pro').classList.remove('vat--hidden')
+            }
+        })
     })
 }
 
